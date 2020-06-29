@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="footerPosition">
+  <a href="#" class="navbar-brand"> SWE Project Movie World</a>
+  <button class="navbar-toggler"></button>
+  <div>
+    <ul class="navbar-nav">
+      <li class=" mr-auto col-auto">
+        <a href="#" routerLink="/popular">Popular</a>
+      </li>
+      <li class="col-auto" routerLinkActive="active">
+        <a href="#"  routerLink="/nowPlaying">Now Playing</a>
+      </li>
+      <li class="col-auto" routerLinkActive="active">
+        <a href="#" routerLink="/topRated" >Top Rated</a>
+      </li>
+      <li class="col-auto" routerLinkActive="active">
+        <a href="#" routerLink="/favourites">Favourites</a>
+      </li>
+      <li class="col-auto" routerLinkActive="active">
+        <a routerLink="/search">Search</a>
+      </li>
+      <li class="col-auto" routerLinkActive="active">
+        <a routerLink="/event">Event</a>
+      </li>
+      <li class="col-auto" routerLinkActive="active">
+        <a routerLink="/special">Special</a>
+      </li>
+      <li *ngIf="!authService.loggedIn()" class="col-auto" routerLinkActive="active">
+        <a routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="!authService.loggedIn()" class="col-auto" routerLinkActive="active">
+        <a routerLink="/register">Register</a>
+      </li>
+      <li *ngIf="authService.loggedIn()" (click)="authService.logoutUser()" class="col-auto" routerLinkActive="active">
+        <a routerLink="/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+

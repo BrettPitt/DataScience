@@ -1,0 +1,45 @@
+<div id="textOnTop">
+  <h1>Welcome to our fantastic Movie World Homepage!</h1>
+  <h1>Here you have some of the most popular Movies at the time!</h1>
+</div>
+<br>
+<div>
+  <input type="text" placeholder="Search Popular" class="form-control col-2 my-0 py-1 amber-border min-width form-control-movie-world" [(ngModel)]="searchName" >
+</div>
+<br>
+<div *ngFor="let genre of movieGenres"  class="btn-group" role="group">
+    <button class="btn btn-dark" style="margin: 2px" (click)="selectedGenreOnClick(genre.id)" id="buttonGenre">{{genre.name}}</button>
+</div>
+<br>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div *ngIf="popular"></div>
+    <div *ngFor="let movie of popular | titleFilter: searchName">
+      <div class="container-fluid movieContainer">
+        <div class="row movieRow">
+          <div class="col-auto">
+            <div class="align-content-between">
+              <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
+                   class="rounded" id="imageSize">
+            </div>
+            <div class="col align-self-center" style="margin: 10px">
+              <div>
+                <button class="btn btn-info"
+                        (click)="onAddToFavourites(movie);">
+                  Add to Favourites
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col text-left">
+            <h3>{{movie.title}}
+            </h3>
+            <h6>{{movie.overview}}</h6>
+            <h5 id="h5">Popularity Count: {{movie.popularity}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div id="searchBody">
+<h1 id="textOnTop">Here is your List of Movies you added to your Favourites!</h1>
+<br>
+<div class="container col containerForFavouriteMovies">
+  <div class="row">
+    <div *ngFor="let movie of favMovieListFromMongoDB, let i = index" style="padding: 10px">
+      <div class="container-fluid containerForFavouritMovie">
+        <div class="row justify-content-center" style="margin: 3px">
+          <h4>
+            {{movie.title}}
+          </h4>
+        </div>
+        <div class="row justify-content-center">
+          <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
+               class="rounded" id="imageSize">
+        </div>
+        <div class="row justify-content-center" style="margin: 10px">
+          <button class="btn btn-danger"
+                  (click)="deleteFavouriteMovie(i);">
+            Delete from Favourites
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+

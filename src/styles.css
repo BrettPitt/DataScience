@@ -1,0 +1,60 @@
+#textOnTop {
+  color: lightgray;
+  width: 60%;
+}
+.footerStyle {
+  width: 100%;
+}
+
+body {
+  background-image: url("https://wallpaperplay.com/walls/full/3/0/7/17345.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+}
+.movieContainer {
+
+  text-decoration-color: green;
+  background-color: grey;
+  max-width: 600px;
+  border: 1px solid rebeccapurple;
+  padding: 10px ;
+  margin: 10px;
+  display: inline-block;
+}
+.containerForFavouriteMovies {
+
+  padding: 1px;
+
+}
+.containerForFavouritMovie {
+  text-decoration-color: green;
+  background-color: grey;
+  width: 300px;
+  height: 430px;
+  margin: 10px;
+  border: 1px solid rebeccapurple;
+  padding: 1px ;
+  display: inline-block;
+}
+
+#buttonGenre {
+  outline: lightgray;
+}
+#footerPosition {
+}
+
+#imageSize {
+  height: 300px;
+}
+
+#searchBody {
+  min-height: 800px;
+  height: max-content;
+}
+
+#h5 {
+  position: absolute;
+  bottom: 0px;
+}
+
+

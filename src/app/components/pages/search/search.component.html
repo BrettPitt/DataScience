@@ -1,0 +1,39 @@
+<h1 id="textOnTop">Here you can Search individually Movies!</h1>
+<div id="searchBody">
+<span>
+  <div class="row" style="margin: 20px">
+    <input class="form-control col-2 my-0 py-1 amber-border min-width form-control-movie-world" placeholder="Search Movie"
+              [(ngModel)]="searchMovieInput"/>
+  <button (click)="searchOnClick()" class="btn btn-dark ml-1">Search</button>
+  </div>
+</span>
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let movie of movies">
+      <div class="container-fluid movieContainer">
+        <div class="row movieRow">
+          <div class="col-auto">
+            <div class="align-content-between">
+              <img src="{{this.moviePath}}{{movie.poster_path}}"
+                   class="rounded" id="imageSize" style="margin: 10px">
+            </div>
+            <div class="col align-self-center">
+              <div>
+                <button class="btn btn-info"
+                        (click)="onAddToFavourites(movie);">
+                  Add to Favourites
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col text-left">
+            <h3>{{movie.title}}
+            </h3>
+            <h6>{{movie.overview}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

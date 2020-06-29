@@ -1,0 +1,42 @@
+<h1 id="textOnTop">Out now in Cinemas all over Switzerland!</h1>
+<br>
+<div>
+  <input type="text" placeholder="Search Now Playing" class="form-control col-2 my-0 py-1 amber-border min-width form-control-movie-world" [(ngModel)]="searchName">
+</div>
+<br>
+<div *ngFor="let genre of movieGenres"  class="btn-group" role="group">
+  <button class="btn btn-dark" style="margin: 2px" (click)="selectedGenreOnClick(genre.id)" id="buttonGenre">{{genre.name}}</button>
+</div>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let movie of nowPlayingMovies | titleFilter: searchName">
+      <div class="container-fluid movieContainer">
+        <div class="row">
+          <div class="col-auto">
+            <div class="align-content-between">
+              <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
+                   class="rounded" id="imageSize">
+                </div>
+            <div class="col align-self-center" style="margin: 10px">
+                <div>
+                <button class="btn btn-info"
+                        (click)="onAddToFavourites(movie);">
+                  Add to Favourites
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col text-left">
+            <h3>{{movie.title}}
+            </h3>
+            <h6>{{movie.overview}}</h6>
+            <h5 id="h5">Release Date: {{movie.release_date}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
